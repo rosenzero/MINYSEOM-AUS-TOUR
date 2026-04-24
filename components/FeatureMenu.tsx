@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState, type ComponentType } from 'react';
 import { CurrencyConverter } from './CurrencyConverter';
 import { FlightPanel } from './FlightPanel';
+import { WeatherPanel } from './WeatherPanel';
 import { TimezoneToggle } from './TimezoneToggle';
 import {
   BriefcaseIcon,
@@ -14,7 +15,7 @@ import {
   SunIcon,
 } from './Icons';
 
-type SubSheet = 'fx' | 'flight' | null;
+type SubSheet = 'fx' | 'flight' | 'weather' | null;
 type IconCmp = ComponentType<{ size?: number; className?: string }>;
 
 export function FeatureMenu({
@@ -110,7 +111,11 @@ export function FeatureMenu({
                 href="/packing/"
                 onClick={() => setMenuOpen(false)}
               />
-              <TileDisabled Icon={SunIcon} label="날씨" />
+              <Tile
+                Icon={SunIcon}
+                label="날씨"
+                onClick={() => openSub('weather')}
+              />
             </div>
 
             <div className="mt-5 rounded-2xl bg-neutral-50 p-4 dark:bg-neutral-800/60">
@@ -130,15 +135,13 @@ export function FeatureMenu({
               </div>
             </div>
 
-            <p className="mt-4 text-center text-[10px] text-neutral-400">
-              오프라인에서도 모두 동작해요
-            </p>
           </div>
         </div>
       )}
 
       <CurrencyConverter open={sub === 'fx'} onClose={() => setSub(null)} />
       <FlightPanel open={sub === 'flight'} onClose={() => setSub(null)} />
+      <WeatherPanel open={sub === 'weather'} onClose={() => setSub(null)} />
     </>
   );
 }
@@ -187,14 +190,3 @@ function TileLink({
   );
 }
 
-function TileDisabled({ Icon, label }: { Icon: IconCmp; label: string }) {
-  return (
-    <div className="flex flex-col items-center justify-center gap-1.5 rounded-2xl bg-neutral-50/60 px-2 py-4 text-center text-neutral-400 opacity-70 dark:bg-neutral-800/30 dark:text-neutral-500">
-      <Icon size={22} />
-      <span className="text-[12px] font-medium">{label}</span>
-      <span className="-mt-1 text-[9px] font-semibold tracking-wider">
-        준비 중
-      </span>
-    </div>
-  );
-}

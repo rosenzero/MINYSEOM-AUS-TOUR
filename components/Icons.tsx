@@ -24,6 +24,18 @@ import {
   LuDoorOpen,
   LuExternalLink,
   LuX,
+  LuCloud,
+  LuCloudRain,
+  LuCloudSnow,
+  LuCloudSun,
+  LuCloudLightning,
+  LuCloudFog,
+  LuCloudDrizzle,
+  LuDroplet,
+  LuThermometer,
+  LuStickyNote,
+  LuPencil,
+  LuTrash2,
 } from 'react-icons/lu';
 
 type IconCmp = ComponentType<IconBaseProps>;
@@ -60,3 +72,15 @@ export const TicketIcon = wrap(LuTicket);
 export const GateIcon = wrap(LuDoorOpen);
 export const ExternalLinkIcon = wrap(LuExternalLink);
 export const CloseIcon = wrap(LuX);
+export const CloudIcon = wrap(LuCloud);
+export const CloudRainIcon = wrap(LuCloudRain);
+export const CloudSnowIcon = wrap(LuCloudSnow);
+export const CloudSunIcon = wrap(LuCloudSun);
+export const CloudLightningIcon = wrap(LuCloudLightning);
+export const CloudFogIcon = wrap(LuCloudFog);
+export const CloudDrizzleIcon = wrap(LuCloudDrizzle);
+export const DropletIcon = wrap(LuDroplet);
+export const ThermometerIcon = wrap(LuThermometer);
+export const StickyNoteIcon = wrap(LuStickyNote);
+export const PencilIcon = wrap(LuPencil);
+export const TrashIcon = wrap(LuTrash2);

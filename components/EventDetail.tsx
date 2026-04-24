@@ -9,6 +9,7 @@ import { LocationActions } from './LocationActions';
 import { ShareButton } from './ShareButton';
 import { FeatureMenu } from './FeatureMenu';
 import { MapPinIcon } from './Icons';
+import { MemoEditor } from './MemoEditor';
 
 function fmtRel(target: Date, now: Date): string {
   const diff = target.getTime() - now.getTime();
@@ -134,6 +135,8 @@ export function EventDetail(props: {
             <LocationActions location={props.location} />
           </div>
         )}
+
+        <MemoEditor uid={props.uid} />
       </main>
     </div>
   );

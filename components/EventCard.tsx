@@ -4,7 +4,8 @@ import Link from 'next/link';
 import type { EventStatus, ResolvedTripEvent } from '@/lib/types';
 import { useDisplayTz } from '@/lib/useDisplayTz';
 import { formatTimeInTz, tzAbbr } from '@/lib/timezone';
-import { MapPinIcon } from './Icons';
+import { useAllMemos, hasMemo } from '@/lib/memoState';
+import { MapPinIcon, StickyNoteIcon } from './Icons';
 
 const statusStyle: Record<
   EventStatus,
@@ -44,6 +45,8 @@ export function EventCard({
   const tz = useDisplayTz();
   const startStr = formatTimeInTz(event.startDate, tz);
   const isCrossTz = tz !== event.tz;
+  const allMemos = useAllMemos();
+  const hasNote = hasMemo(event.uid, allMemos);
   return (
     <Link
       href={`/event/${event.uid}/`}
@@ -81,14 +84,23 @@ export function EventCard({
 
       {/* body */}
       <div className="min-w-0 flex-1">
-        <p
-          className={[
-            'truncate text-[15px] leading-snug',
-            s.title,
-          ].join(' ')}
-        >
-          {event.title}
-        </p>
+        <div className="flex items-center gap-1.5">
+          <p
+            className={[
+              'truncate text-[15px] leading-snug',
+              s.title,
+            ].join(' ')}
+          >
+            {event.title}
+          </p>
+          {hasNote && (
+            <StickyNoteIcon
+              size={12}
+              className="shrink-0 text-amber-500"
+              aria-label="메모 있음"
+            />
+          )}
+        </div>
         {event.location && (
           <p className={['mt-1 flex items-center gap-1 truncate text-xs', s.loc].join(' ')}>
             <MapPinIcon size={11} className="shrink-0" />
