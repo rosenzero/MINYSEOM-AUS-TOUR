@@ -1,0 +1,132 @@
+{
+  "info": {
+    "title": "뇽섬 호주 여행🦘🧡",
+    "startDate": "2026-05-01",
+    "endDate": "2026-05-07",
+    "members": []
+  },
+  "days": [
+    { "date": "5/1", "day": "금" },
+    { "date": "5/2", "day": "토" },
+    { "date": "5/3", "day": "일" },
+    { "date": "5/4", "day": "월" },
+    { "date": "5/5", "day": "화" },
+    { "date": "5/6", "day": "수" },
+    { "date": "5/7", "day": "목" }
+  ],
+  "events": [
+    { "dayIdx": 0, "start": "05:00", "end": "09:00", "title": "취침", "location": "" },
+    { "dayIdx": 0, "start": "09:30", "end": "11:00", "title": "기상 및 준비", "location": "" },
+    { "dayIdx": 0, "start": "11:30", "end": "13:00", "title": "인천공항 이동", "location": "Incheon International Airport Terminal 2" },
+    { "dayIdx": 0, "start": "13:30", "end": "14:00", "title": "체크인 및 출국수속", "location": "Incheon International Airport Terminal 2" },
+    { "dayIdx": 0, "start": "14:30", "end": "15:00", "title": "점심식사", "location": "Incheon Airport Terminal 2 Food Court" },
+    { "dayIdx": 0, "start": "15:30", "end": "16:00", "title": "면세점", "location": "Incheon Airport Terminal 2 Duty Free" },
+    { "dayIdx": 0, "start": "16:30", "end": "19:00", "title": "마티나 라운지", "location": "Matina Lounge Incheon Airport Terminal 2" },
+    { "dayIdx": 0, "start": "19:30", "end": "19:30", "title": "비행기 탑승 준비", "location": "Incheon Airport Terminal 2 Gate 252" },
+    { "dayIdx": 0, "start": "20:00", "end": "23:00", "title": "브리즈번 비행기", "location": "" },
+
+    { "dayIdx": 1, "start": "05:00", "end": "06:30", "title": "브리즈번 비행기", "location": "" },
+    { "dayIdx": 1, "start": "07:00", "end": "07:00", "title": "브리즈번 도착", "location": "Brisbane Airport International Terminal" },
+    { "dayIdx": 1, "start": "07:30", "end": "09:00", "title": "아침식사 및 케언즈 비행기 대기", "location": "Brisbane Airport Domestic Terminal" },
+    { "dayIdx": 1, "start": "09:30", "end": "13:00", "title": "케언즈 비행기", "location": "" },
+    { "dayIdx": 1, "start": "13:30", "end": "14:00", "title": "입국수속", "location": "Cairns Airport" },
+    { "dayIdx": 1, "start": "14:30", "end": "15:00", "title": "호텔 이동 및 체크인", "location": "Cairns CBD" },
+    { "dayIdx": 1, "start": "15:30", "end": "16:00", "title": "케언즈 아트 갤러리", "location": "Cairns Art Gallery" },
+    { "dayIdx": 1, "start": "16:30", "end": "18:30", "title": "라군 수영", "location": "Cairns Esplanade Lagoon" },
+    { "dayIdx": 1, "start": "19:00", "end": "19:30", "title": "저녁식사", "location": "Waterbar & Grill Steakhouse Cairns" },
+    { "dayIdx": 1, "start": "20:00", "end": "21:00", "title": "밤산책", "location": "Cairns Esplanade" },
+    { "dayIdx": 1, "start": "21:30", "end": "23:00", "title": "휴식", "location": "" },
+
+    { "dayIdx": 2, "start": "05:00", "end": "06:00", "title": "취침", "location": "" },
+    { "dayIdx": 2, "start": "06:30", "end": "06:30", "title": "기상 및 준비", "location": "" },
+    { "dayIdx": 2, "start": "07:00", "end": "08:00", "title": "Reef Fleet Terminal 도착 및 체크인", "location": "Reef Fleet Terminal Cairns" },
+    { "dayIdx": 2, "start": "08:30", "end": "11:30", "title": "첫번째 스노클링", "location": "Great Barrier Reef Cairns" },
+    { "dayIdx": 2, "start": "12:00", "end": "13:00", "title": "BBQ 점심식사", "location": "" },
+    { "dayIdx": 2, "start": "13:30", "end": "14:30", "title": "두번째 스노클링", "location": "Great Barrier Reef Cairns" },
+    { "dayIdx": 2, "start": "15:00", "end": "16:00", "title": "케언즈 복귀", "location": "Reef Fleet Terminal Cairns" },
+    { "dayIdx": 2, "start": "16:30", "end": "17:00", "title": "호텔 휴식", "location": "" },
+    { "dayIdx": 2, "start": "17:30", "end": "18:30", "title": "쇼핑센터 구경", "location": "Cairns Central Shopping Centre" },
+    { "dayIdx": 2, "start": "19:00", "end": "19:30", "title": "저녁식사", "location": "The Cotton Club Cairns" },
+    { "dayIdx": 2, "start": "20:00", "end": "21:00", "title": "나이트 마켓", "location": "Cairns Night Markets" },
+    { "dayIdx": 2, "start": "21:30", "end": "23:00", "title": "휴식", "location": "" },
+
+    { "dayIdx": 3, "start": "05:00", "end": "06:00", "title": "취침", "location": "" },
+    { "dayIdx": 3, "start": "06:30", "end": "07:30", "title": "기상 및 준비", "location": "" },
+    { "dayIdx": 3, "start": "08:00", "end": "08:30", "title": "쿠란다 투어 픽업", "location": "Cairns CBD" },
+    { "dayIdx": 3, "start": "09:00", "end": "16:00", "title": "쿠란다 투어", "location": "Kuranda Village QLD" },
+    { "dayIdx": 3, "start": "16:30", "end": "18:30", "title": "호텔 휴식", "location": "" },
+    { "dayIdx": 3, "start": "19:00", "end": "19:30", "title": "저녁식사", "location": "Dundees Restaurant Cairns" },
+    { "dayIdx": 3, "start": "20:00", "end": "21:00", "title": "밤수영", "location": "Cairns Esplanade Lagoon" },
+    { "dayIdx": 3, "start": "21:30", "end": "23:00", "title": "휴식", "location": "" },
+
+    { "dayIdx": 4, "start": "05:00", "end": "06:00", "title": "취침", "location": "" },
+    { "dayIdx": 4, "start": "06:30", "end": "07:00", "title": "기상 및 준비", "location": "" },
+    { "dayIdx": 4, "start": "07:30", "end": "08:00", "title": "공항 이동", "location": "Cairns Airport" },
+    { "dayIdx": 4, "start": "08:30", "end": "10:30", "title": "체크인 및 대기", "location": "Cairns Airport" },
+    { "dayIdx": 4, "start": "11:00", "end": "13:00", "title": "브리즈번 비행기", "location": "" },
+    { "dayIdx": 4, "start": "13:30", "end": "14:00", "title": "호텔 이동 및 체크인", "location": "Brisbane CBD" },
+    { "dayIdx": 4, "start": "14:30", "end": "15:00", "title": "점심식사", "location": "Stanton Brasserie Brisbane" },
+    { "dayIdx": 4, "start": "15:30", "end": "17:00", "title": "쇼핑 및 시내 구경", "location": "Queen Street Mall Brisbane" },
+    { "dayIdx": 4, "start": "17:30", "end": "19:30", "title": "저녁식사", "location": "Felons Brewing Co Brisbane" },
+    { "dayIdx": 4, "start": "20:00", "end": "21:00", "title": "야간 시내 구경", "location": "Story Bridge Brisbane" },
+    { "dayIdx": 4, "start": "21:30", "end": "23:00", "title": "휴식", "location": "" },
+
+    { "dayIdx": 5, "start": "05:00", "end": "08:00", "title": "취침", "location": "" },
+    { "dayIdx": 5, "start": "08:30", "end": "09:00", "title": "기상 및 준비", "location": "" },
+    { "dayIdx": 5, "start": "09:30", "end": "10:00", "title": "아침식사 및 커피 테이크아웃", "location": "Brisbane CBD" },
+    { "dayIdx": 5, "start": "10:30", "end": "11:00", "title": "시티 보태닉 가든", "location": "Brisbane City Botanic Gardens" },
+    { "dayIdx": 5, "start": "11:30", "end": "12:30", "title": "GOMA 미술관", "location": "Gallery of Modern Art Brisbane" },
+    { "dayIdx": 5, "start": "13:00", "end": "13:30", "title": "점심식사", "location": "Coffee Anthology Brisbane" },
+    { "dayIdx": 5, "start": "14:00", "end": "14:30", "title": "호텔 휴식", "location": "" },
+    { "dayIdx": 5, "start": "15:00", "end": "21:00", "title": "무게라 투어", "location": "Moreton Island QLD" },
+    { "dayIdx": 5, "start": "21:30", "end": "23:00", "title": "휴식", "location": "" },
+
+    { "dayIdx": 6, "start": "05:00", "end": "05:30", "title": "기상 및 준비", "location": "" },
+    { "dayIdx": 6, "start": "06:00", "end": "06:30", "title": "공항 이동", "location": "Brisbane Airport" },
+    { "dayIdx": 6, "start": "07:00", "end": "13:00", "title": "체크인 및 대기", "location": "Brisbane Airport International Terminal" },
+    { "dayIdx": 6, "start": "13:30", "end": "18:30", "title": "인천 비행기", "location": "" },
+    { "dayIdx": 6, "start": "19:00", "end": "23:00", "title": "여행 종료", "location": "Incheon International Airport" }
+  ],
+  "accommodations": [
+    {
+      "name": "케언즈 호텔",
+      "city": "케언즈",
+      "checkIn": "2026-05-02",
+      "checkOut": "2026-05-05",
+      "address": "",
+      "price": 0,
+      "confirmation": "",
+      "notes": ""
+    },
+    {
+      "name": "브리즈번 호텔",
+      "city": "브리즈번",
+      "checkIn": "2026-05-05",
+      "checkOut": "2026-05-07",
+      "address": "",
+      "price": 0,
+      "confirmation": "",
+      "notes": ""
+    }
+  ],
+  "packing": [
+    { "category": "준비물", "item": "멀티 어댑터", "done": false },
+    { "category": "준비물", "item": "상비약(진통제, 소화제, 밴드)", "done": false },
+    { "category": "준비물", "item": "비닐봉지", "done": false },
+    { "category": "준비물", "item": "간편 세면도구", "done": false },
+    { "category": "준비물", "item": "멀미약", "done": false },
+    { "category": "준비물", "item": "래쉬가드", "done": false },
+    { "category": "준비물", "item": "팔토시", "done": false },
+    { "category": "준비물", "item": "아쿠아슈즈", "done": false },
+    { "category": "준비물", "item": "방수팩", "done": false },
+    { "category": "준비물", "item": "개인돗자리", "done": false }
+  ],
+  "expenses": [
+    { "date": "2026-05-01", "category": "항공권", "item": "인천 → 브리즈번 왕복", "amount": 0, "currency": "KRW", "paidBy": "" },
+    { "date": "2026-05-02", "category": "숙박", "item": "케언즈 호텔 3박", "amount": 0, "currency": "AUD", "paidBy": "" },
+    { "date": "2026-05-03", "category": "액티비티", "item": "스노클링 투어", "amount": 0, "currency": "AUD", "paidBy": "" },
+    { "date": "2026-05-04", "category": "액티비티", "item": "쿠란다 투어", "amount": 0, "currency": "AUD", "paidBy": "" },
+    { "date": "2026-05-05", "category": "숙박", "item": "브리즈번 호텔 2박", "amount": 0, "currency": "AUD", "paidBy": "" },
+    { "date": "2026-05-06", "category": "액티비티", "item": "무게라 투어", "amount": 0, "currency": "AUD", "paidBy": "" }
+  ]
+}

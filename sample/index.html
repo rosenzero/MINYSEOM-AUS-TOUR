@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>호주 여행 플래너</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="top">
+  <div class="top-left">
+    <h1 id="tripTitle">호주 여행</h1>
+    <div class="top-meta">
+      <span id="tripDates"></span>
+      <span id="tripDDay" class="dday"></span>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="btnExport" class="btn" title="JSON 내보내기">📥</button>
+    <label class="btn" title="JSON 불러오기">
+      📤
+      <input type="file" id="fileImport" accept="application/json" hidden />
+    </label>
+    <button id="btnReset" class="btn btn-danger" title="초기화">🔄</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="today">🕐 오늘</button>
+  <button class="tab" data-tab="schedule">📅 전체일정</button>
+  <button class="tab" data-tab="stay">🏨 숙소</button>
+  <button class="tab" data-tab="packing">🎒 준비물</button>
+  <button class="tab" data-tab="expense">💰 경비</button>
+  <button class="tab" data-tab="info">ℹ️ 정보</button>
+</nav>
+
+<main>
+  <!-- 오늘: 타임라인 뷰 -->
+  <section id="tab-today" class="tab-panel active">
+    <div class="day-nav">
+      <button id="dayPrev" class="nav-arrow">‹</button>
+      <div class="day-current">
+        <div class="day-title" id="dayTitle">-</div>
+        <div class="day-sub" id="daySub"></div>
+      </div>
+      <button id="dayNext" class="nav-arrow">›</button>
+      <button id="dayJumpToday" class="btn btn-primary">오늘로</button>
+    </div>
+    <div class="day-selector" id="daySelector"></div>
+
+    <div class="day-timeline-wrap">
+      <div class="day-timeline" id="dayTimeline"></div>
+      <button id="btnAddEventToday" class="fab" title="일정 추가">＋</button>
+    </div>
+  </section>
+
+  <!-- 전체 일정 그리드 -->
+  <section id="tab-schedule" class="tab-panel">
+    <div class="section-head">
+      <h2>전체 일정</h2>
+      <button id="btnAddEvent" class="btn btn-primary">+ 일정 추가</button>
+    </div>
+    <div class="schedule-wrap">
+      <table id="scheduleTable" class="schedule"></table>
+    </div>
+  </section>
+
+  <!-- 숙소 -->
+  <section id="tab-stay" class="tab-panel">
+    <div class="section-head">
+      <h2>숙소</h2>
+      <button id="btnAddStay" class="btn btn-primary">+ 숙소 추가</button>
+    </div>
+    <div id="stayList" class="card-list"></div>
+  </section>
+
+  <!-- 준비물 -->
+  <section id="tab-packing" class="tab-panel">
+    <div class="section-head">
+      <h2>준비물</h2>
+      <div class="section-actions">
+        <span id="packingProgress" class="progress-text"></span>
+        <button id="btnAddPack" class="btn btn-primary">+ 항목 추가</button>
+      </div>
+    </div>
+    <div id="packingGroups"></div>
+  </section>
+
+  <!-- 경비 -->
+  <section id="tab-expense" class="tab-panel">
+    <div class="section-head">
+      <h2>경비</h2>
+      <button id="btnAddExpense" class="btn btn-primary">+ 지출 추가</button>
+    </div>
+    <div id="expenseSummary" class="expense-summary"></div>
+    <div class="table-wrap">
+      <table id="expenseTable" class="expense-table">
+        <thead>
+          <tr>
+            <th>날짜</th><th>분류</th><th>항목</th><th>금액</th><th>통화</th><th>결제자</th><th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 정보 -->
+  <section id="tab-info" class="tab-panel">
+    <div class="section-head"><h2>여행 정보</h2></div>
+    <form id="infoForm" class="form">
+      <label>제목<input name="title" /></label>
+      <label>출발일<input name="startDate" type="date" /></label>
+      <label>귀국일<input name="endDate" type="date" /></label>
+      <label>동행자 (쉼표로 구분)<input name="members" placeholder="예) 엄마, 동생" /></label>
+      <button type="submit" class="btn btn-primary">저장</button>
+    </form>
+    <div class="share-info">
+      <h3>공유 & 사용법</h3>
+      <ul>
+        <li><b>🕐 오늘</b> 탭: 해당일 시간대별 타임라인. 이벤트 탭하면 <b>🗺️ 지도</b>/<b>🧭 경로</b> 버튼으로 구글 지도 앱 열림.</li>
+        <li><b>경로</b>는 이전 이벤트 장소→현재 장소, <b>지도</b>는 현재 장소 검색.</li>
+        <li>📥로 JSON 내보내기 → 같이 가는 사람에게 전달 → 📤로 불러오기.</li>
+        <li>모든 편집은 브라우저에 자동 저장됩니다.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- Event detail popup -->
+<div id="evSheet" class="sheet hidden">
+  <div class="sheet-body">
+    <div class="sheet-handle"></div>
+    <div class="sheet-head">
+      <div>
+        <div class="sheet-time" id="evTime"></div>
+        <h3 class="sheet-title" id="evTitle"></h3>
+        <div class="sheet-loc" id="evLoc"></div>
+      </div>
+      <button class="sheet-close" id="evClose">✕</button>
+    </div>
+    <div class="sheet-actions">
+      <a id="evMap" class="btn btn-primary btn-big" target="_blank" rel="noopener">🗺️ 지도에서 보기</a>
+      <a id="evDir" class="btn btn-big" target="_blank" rel="noopener">🧭 이전 장소에서 경로</a>
+    </div>
+    <div class="sheet-edit">
+      <button id="evEdit" class="btn">✏️ 수정</button>
+      <button id="evDelete" class="btn btn-danger">🗑 삭제</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-body">
+    <h3 id="modalTitle"></h3>
+    <form id="modalForm"></form>
+    <div class="modal-actions">
+      <button type="button" id="modalCancel" class="btn">취소</button>
+      <button type="button" id="modalSave" class="btn btn-primary">저장</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
