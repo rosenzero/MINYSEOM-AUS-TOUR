@@ -2,8 +2,8 @@
   "name": "뇽섬 호주 여행",
   "short_name": "호주여행",
   "description": "호주 여행 일정·체크리스트·지도 (오프라인 지원)",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/MINYSEOM-AUS-TOUR/",
+  "scope": "/MINYSEOM-AUS-TOUR/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0a0a0a",
@@ -11,19 +11,19 @@
   "lang": "ko",
   "icons": [
     {
-      "src": "/icon-192.svg",
+      "src": "/MINYSEOM-AUS-TOUR/icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icon-512.svg",
+      "src": "/MINYSEOM-AUS-TOUR/icon-512.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icon-maskable.svg",
+      "src": "/MINYSEOM-AUS-TOUR/icon-maskable.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "maskable"

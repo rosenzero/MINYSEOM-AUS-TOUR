@@ -7,6 +7,7 @@ import { TRIP } from '@/lib/trip';
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://example.com';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const description = `${TRIP.info.startDate} – ${TRIP.info.endDate} · ${TRIP.days.length}일간의 일정`;
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title: { default: TRIP.info.title, template: `%s · ${TRIP.info.title}` },
   description,
   applicationName: TRIP.info.title,
-  manifest: '/manifest.webmanifest',
+  manifest: `${BASE_PATH}/manifest.webmanifest`,
   appleWebApp: {
     capable: true,
     title: TRIP.info.title,
@@ -23,10 +24,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon-192.svg', sizes: '192x192', type: 'image/svg+xml' },
-      { url: '/icon-512.svg', sizes: '512x512', type: 'image/svg+xml' },
+      { url: `${BASE_PATH}/icon-192.svg`, sizes: '192x192', type: 'image/svg+xml' },
+      { url: `${BASE_PATH}/icon-512.svg`, sizes: '512x512', type: 'image/svg+xml' },
     ],
-    apple: [{ url: '/icon-192.svg' }],
+    apple: [{ url: `${BASE_PATH}/icon-192.svg` }],
   },
   openGraph: {
     title: TRIP.info.title,

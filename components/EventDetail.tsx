@@ -6,8 +6,6 @@ import { useDisplayTz } from '@/lib/useDisplayTz';
 import { formatTimeInTz, tzAbbr } from '@/lib/timezone';
 import { getEventTz } from '@/lib/timezone';
 import { LocationActions } from './LocationActions';
-import { ShareButton } from './ShareButton';
-import { FeatureMenu } from './FeatureMenu';
 import { MapPinIcon } from './Icons';
 import { MemoEditor } from './MemoEditor';
 
@@ -72,14 +70,6 @@ export function EventDetail(props: {
           <span className="text-sm font-medium text-neutral-500">
             DAY {props.dayIdx + 1} · {props.dayLabel}
           </span>
-          <div className="ml-auto flex items-center gap-1.5">
-            <ShareButton
-              variant="icon-dark"
-              shareTitle={props.title}
-              shareText={`DAY ${props.dayIdx + 1} · ${props.dayLabel} · ${props.start}–${props.end}`}
-            />
-            <FeatureMenu variant="icon-dark" />
-          </div>
         </div>
       </header>
 

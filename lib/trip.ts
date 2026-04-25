@@ -49,7 +49,7 @@ export function getAllEventsSorted(): ResolvedTripEvent[] {
         startDate,
         endDate,
         tz: getEventTz(e.dayIdx),
-        uid: `d${e.dayIdx}-${e.start}-${idx}`,
+        uid: `d${e.dayIdx}-${e.start.replace(':', '')}-${idx}`,
       };
     })
     .filter((e) => !HIDDEN_TITLES.has(e.title.trim()));

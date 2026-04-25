@@ -12,8 +12,9 @@ export function ServiceWorkerRegister() {
 
     const onLoad = async () => {
       try {
-        const reg = await navigator.serviceWorker.register('/sw.js', {
-          scope: '/',
+        const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const reg = await navigator.serviceWorker.register(`${base}/sw.js`, {
+          scope: `${base}/`,
         });
         // best-effort: warm the cache with every event page so the full trip
         // works offline without needing to visit each one first
@@ -22,9 +23,9 @@ export function ServiceWorkerRegister() {
           reg.active ??
           (await waitForActive(reg));
         const urls = [
-          '/',
-          '/packing/',
-          ...getAllEventsSorted().map((e) => `/event/${e.uid}/`),
+          `${base}/`,
+          `${base}/packing/`,
+          ...getAllEventsSorted().map((e) => `${base}/event/${e.uid}/`),
         ];
         await Promise.all(
           urls.map((u) =>

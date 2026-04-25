@@ -1,17 +1,21 @@
 /* Aus Tour service worker — offline support for static Next export */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const APP_CACHE = `aus-tour-app-${VERSION}`;
 const ASSET_CACHE = `aus-tour-assets-${VERSION}`;
+
+// Derive base path from the SW's own location so the same file works
+// whether deployed at "/" or "/MINYSEOM-AUS-TOUR/".
+const BASE = self.location.pathname.replace(/sw\.js$/, '');
 
 // App shell — pages that must be available offline.
 // Note: trailingSlash: true in next.config, so these match the exported HTML.
 const APP_SHELL = [
-  '/',
-  '/packing/',
-  '/offline.html',
-  '/manifest.webmanifest',
-  '/icon-192.svg',
-  '/icon-512.svg',
+  `${BASE}`,
+  `${BASE}packing/`,
+  `${BASE}offline.html`,
+  `${BASE}manifest.webmanifest`,
+  `${BASE}icon-192.svg`,
+  `${BASE}icon-512.svg`,
 ];
 
 self.addEventListener('install', (event) => {
@@ -54,7 +58,7 @@ function isNavigationRequest(req) {
 
 function isStaticAsset(url) {
   return (
-    url.pathname.startsWith('/_next/') ||
+    url.pathname.startsWith(`${BASE}_next/`) ||
     /\.(?:js|css|woff2?|ttf|otf|png|jpg|jpeg|gif|webp|svg|ico|json|webmanifest)$/i.test(url.pathname)
   );
 }
@@ -86,10 +90,9 @@ async function handleNavigation(req) {
   } catch {
     const cached = await cache.match(req);
     if (cached) return cached;
-    // try stripped variants (e.g. root) before falling back
-    const rootFallback = await cache.match('/');
+    const rootFallback = await cache.match(BASE);
     if (rootFallback) return rootFallback;
-    const offline = await cache.match('/offline.html');
+    const offline = await cache.match(`${BASE}offline.html`);
     if (offline) return offline;
     return new Response('offline', { status: 503, statusText: 'offline' });
   }
